@@ -32,3 +32,21 @@ def lexanalyzer(inputfile):
         ('SEMICOLON',           r';'),
         ('IDENTIFIER',          r'[a-zA-Z_]\w*'),
     ]
+
+    LexicalAnalyzer = Analyzer(rules, open(inputfile, 'r').read())
+    try:
+        arr = []
+
+        for token in LexicalAnalyzer.generate_token():
+            arr.append([token.token_position, token.token_type, token.token_value])
+            
+        arr = np.array(arr)
+        
+        df = pd.DataFrame(arr, columns=['Position', 'Type', 'Value'])
+        df.to_excel('output.xlsx', index = None, header = True)
+
+    except UnknownToken as Error:
+        print(Error)
+        
+if __name__ == '__main__':
+    app()
