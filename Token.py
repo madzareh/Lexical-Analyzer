@@ -12,3 +12,14 @@ class Token:
     
     def __repr__(self):
         return self.__str__()
+
+class UnknownToken(Exception):
+    
+    def __init__(self, buffer, token_position):
+
+        super().__init__()
+        self.buffer = buffer
+        self.token_position = token_position
+
+    def __str__(self):
+        return f'\nLexical Analyzer Error: Unknown Token\n\n{self.buffer[self.token_position:self.token_position + 30]}'        
