@@ -2,9 +2,12 @@
 This Analyzer gets Input.txt input file of source code and generates tokens in Output.xlsx Excel file. (Each token in one cell and its corresponding token type in other cell)
 
 
-* ### How to run The Lexical-Analyzer?
-  Open a new terminal and type `python3 LexicalAnalyzer.py input.txt`
-
+* ### How to run "The Lexical Analyzer"?
+  Open a new terminal and type command below
+  
+  ``` 
+  $ python3 LexicalAnalyzer.py input.txt
+  ```
 
 * ### In what way The Output is structured?
   Token positions are placed in the first column. In the second column, you will find the type of token. The third column shows the value of that             token.
